@@ -13,11 +13,11 @@ export const originalSlice = createSlice({
 			state.originalTextLength = action.payload.length;
 			state.value = String(action.payload)
 				.replace(/(\r\n|\n|\r)/gm, "")
-				.replace(/;.*}/g, ";}")
+				// .replace(/;.*}/g, ";}");
 				.replaceAll("    ", "")
-				.replaceAll("  ", "")
-				.replace(/<!---.*--->/g, "") //for removing the HTML comments
-				.replace(/\/*.* *\//g, ""); //for removing the CSS comments
+				.replaceAll("  ", "");
+			// .replace(/<!---.*--->/g, "") //for removing the HTML comments
+			// .replace(/\/*.* *\//g, ""); //for removing the CSS comments
 		},
 		reset: (state) => {
 			state.value = "";
